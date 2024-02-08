@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+/* GLOBAL */
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --red: hsl(0,78%,62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);  
+
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
+html {
+  font-size: calc(15rem/16);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  padding: 5rem 0;
+}
+
+h1, 
+h2,
+h3 {
+  color: var(--very-dark-blue);
+}
+
+p {  
+  color: var(--grayish-blue);
+}
+/* HEADER */
+header {
+  text-align: center;
+  max-width: 34rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+header p {
+  margin: 1rem 0 0 0;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+/* CARDS - main */
+main {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  max-width: 73.5rem;
+  gap: 2rem;
+  align-items: center;  
+  margin: 4.5rem 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 16.75rem;
+  position: relative;
+  justify-content: space-around;
+  padding: 1.2rem 2rem 1.5rem;
+  box-shadow: 0 1rem 15px 0 hsl(234, 12%, 34%,0.1);  
+}
+ 
+ .card::before {
+  content: "";  
+  height: 0.3rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+} 
+
+.card p {
+  font-size: 0.85rem;
+  position: relative;
+  top: max(-1rem,-20px);
+  line-height: 1.5rem;
+}
+
+.card img {
+  max-width: 4.5rem;
+  min-width: 3rem;
+  margin-left: auto;
+}
+
+main .grid-mid-column {
+  display: grid;
+  gap: 2rem;
+}
+
+.supervisor::before {
+  background-color: var(--cyan);
+}
+
+.team-builder::before {
+  background-color: var(--red);
+}
+
+.karma::before {
+  background-color: var(--orange);
+}
+
+.calculator::before {
+  background-color: var(--blue);
+}
+
+/* FOOTER */
+.attribution {  
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 77rem) {
+  /* HEADER */
+  header {
+    max-width: 19.7rem;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  /* CARDS - main */
+  main {
+    min-width: 16.5rem;
+    max-width: 20.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin: 5.5rem 0;
+  }
+
+  main .grid-mid-column {
+    gap: 1.5rem;
+  }
+
+  .card {
+    min-height: 14.5rem;
+  }
+
+  .card p {
+    top: max(-0.75rem,-20px);
+  }
+ 
+  .card img {
+    max-width: 3.5rem;
+  }
+}
